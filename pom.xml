@@ -32,9 +32,15 @@
 
         <!--为了演示chapter4  其他servlet container start-->
         <!--Use jetty instead tomcat-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-jetty</artifactId>-->
+        <!--</dependency>-->
+
+        <!--use undertow instead of tomcat-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jetty</artifactId>
+            <artifactId>spring-boot-starter-undertow</artifactId>
         </dependency>
         <!--为了演示chapter4  其他servlet container end-->
         <dependency>
