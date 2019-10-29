@@ -11,36 +11,50 @@
     <name>think-in-spring-boot</name>
     <description>deep thinking in spring boot</description>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.sourceEncoding>UTF-8</project.reporting.sourceEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-actuator</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <!--为了演示chapter4  其他servlet container start-->
-            <!--exclude tomcat-->
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-tomcat</artifactId>
-                </exclusion>
-            </exclusions>
-            <!--为了演示chapter4  其他servlet container end-->
-        </dependency>
+        <!--为了演示webflux ,如果web和webflux同时存在，则依然是servlet web 生效-->
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-web</artifactId>-->
+        <!--&lt;!&ndash;为了演示chapter4  其他servlet container start&ndash;&gt;-->
+        <!--&lt;!&ndash;exclude tomcat&ndash;&gt;-->
+        <!--<exclusions>-->
+        <!--<exclusion>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-tomcat</artifactId>-->
+        <!--</exclusion>-->
+        <!--</exclusions>-->
+        <!--&lt;!&ndash;为了演示chapter4  其他servlet container end&ndash;&gt;-->
+        <!--</dependency>-->
 
         <!--为了演示chapter4  其他servlet container start-->
         <!--Use jetty instead tomcat-->
         <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-jetty</artifactId>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-jetty</artifactId>-->
         <!--</dependency>-->
 
-        <!--use undertow instead of tomcat-->
+        <!--use undertow servlet container instead of tomcat-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-undertow</artifactId>
+        </dependency>
+
+        <!--演示undertow 作为reactor container-->
+        <!-- include webflux -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
         <!--为了演示chapter4  其他servlet container end-->
         <dependency>
@@ -69,6 +83,16 @@
 
     <build>
         <plugins>
+            <plugin>
+                <!--解决maven 默认编译器插件采用的默认java compiler 1.5,与spring-boot-dependencies版本一致-->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
