@@ -4,7 +4,9 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.context.WebServerApplicationContext;
+import org.springframework.boot.web.context.WebServerInitializedEvent;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.event.EventListener;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.server.RouterFunction;
@@ -47,5 +49,11 @@ public class Chapter4Bootstrap {
             System.out.println("当前Web server实现类为：" +
                     context.getWebServer().getClass().getName());
         });
+    }
+
+    @EventListener(WebServerInitializedEvent.class)
+    public void onWebServerReady(WebServerInitializedEvent event) {
+        System.out.println("当前WebServer实现类为：" +
+                event.getWebServer().getClass().getName());
     }
 }
