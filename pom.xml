@@ -7,7 +7,10 @@
     <groupId>com.sxzhongf</groupId>
     <artifactId>think-in-spring-boot</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <modules>
+        <module>chapter5</module>
+    </modules>
+    <packaging>pom</packaging>
     <name>think-in-spring-boot</name>
     <description>deep thinking in spring boot</description>
 

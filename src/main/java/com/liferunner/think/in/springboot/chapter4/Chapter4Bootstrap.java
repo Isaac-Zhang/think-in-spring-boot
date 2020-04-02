@@ -39,6 +39,7 @@ public class Chapter4Bootstrap {
             .run(Chapter4Bootstrap.class,
                 args);
         System.out.println("==========当前WebServer：" + applicationContext.getWebServer().getClass().getName());
+
     }
 
     /**
@@ -64,7 +65,15 @@ public class Chapter4Bootstrap {
 
     @EventListener(WebServerInitializedEvent.class)
     public void onWebServerReady(WebServerInitializedEvent event) {
-        System.out.println("当前WebServer实现类为：" +
+        System.out.println("当前EventListener WebServer实现类为：" +
             event.getWebServer().getClass().getName());
     }
+
+    @EventListener(WebServerInitializedEvent.class)
+    public void getWebServerAfterSpringbootStarted(WebServerInitializedEvent event) {
+        System.out.println(
+            "自定义监听器函数名称：" + event.getApplicationContext().getWebServer().getPort()
+        );
+    }
+
 }
