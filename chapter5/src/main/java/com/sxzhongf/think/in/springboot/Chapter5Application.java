@@ -14,6 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Chapter5Application {
 
     public static void main(String[] args) {
+        // 直接注入WebConfiguration 类实现
         SpringApplication.run(WebConfiguration.class, args);
     }
 }

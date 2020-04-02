@@ -1,0 +1,3 @@
+#◊‘∂Ø≈‰÷√
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.sxzhongf.think.in.springboot.config.WebAutoConfiguration

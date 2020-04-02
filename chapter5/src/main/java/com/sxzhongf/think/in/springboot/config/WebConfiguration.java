@@ -23,8 +23,8 @@ import reactor.core.publisher.Mono;
  * @author <a href="mailto:magicianisaac@gmail.com">Isaac.Zhang | 若初</a>
  * @since 2020/4/2
  **/
-//@Configuration
-@SpringBootApplication
+@Configuration
+//@SpringBootApplication
 //    @EnableAutoConfiguration
 public class WebConfiguration {
 
