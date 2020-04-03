@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>chapter5</module>
+        <module>chapter6</module>
     </modules>
     <packaging>pom</packaging>
     <name>think-in-spring-boot</name>
@@ -21,24 +22,24 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-actuator</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-actuator</artifactId>-->
+<!--        </dependency>-->
         <!--为了演示webflux ,如果web和webflux同时存在，则依然是servlet web 生效-->
-        <!--<dependency>-->
-        <!--<groupId>org.springframework.boot</groupId>-->
-        <!--<artifactId>spring-boot-starter-web</artifactId>-->
-        <!--&lt;!&ndash;为了演示chapter4  其他servlet container start&ndash;&gt;-->
-        <!--&lt;!&ndash;exclude tomcat&ndash;&gt;-->
-        <!--<exclusions>-->
-        <!--<exclusion>-->
-        <!--<groupId>org.springframework.boot</groupId>-->
-        <!--<artifactId>spring-boot-starter-tomcat</artifactId>-->
-        <!--</exclusion>-->
-        <!--</exclusions>-->
-        <!--&lt;!&ndash;为了演示chapter4  其他servlet container end&ndash;&gt;-->
-        <!--</dependency>-->
+        <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+        <!--为了演示chapter4  其他servlet container start-->
+        <!--exclude tomcat-->
+<!--        <exclusions>-->
+            <!--        <exclusion>-->
+            <!--        <groupId>org.springframework.boot</groupId>-->
+            <!--        <artifactId>spring-boot-starter-tomcat</artifactId>-->
+            <!--        </exclusion>-->
+            <!--        </exclusions>-->
+        <!--为了演示chapter4  其他servlet container end-->
+        </dependency>
 
         <!--为了演示chapter4  其他servlet container start-->
         <!--Use jetty instead tomcat-->
@@ -48,10 +49,10 @@
         <!--</dependency>-->
 
         <!--use undertow servlet container instead of tomcat-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-undertow</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-undertow</artifactId>-->
+<!--        </dependency>-->
 
         <!--演示undertow 作为reactor container-->
         <!-- include webflux -->
