@@ -18,11 +18,19 @@ import org.springframework.transaction.annotation.Transactional;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Transactional
-@Service
+@Service(value = "transactionalService#value")
 public @interface TransactionalService {
 
     /**
      * @return 服务 bean 名称
      */
     String name() default "";
+
+    /**
+     * 覆盖 {@link Transactional#transactionManager()} 的默认值
+     *
+     * @return {@link org.springframework.transaction.PlatformTransactionManager} Bean 名称，
+     * 默认关联 "txManager" Bean
+     */
+    String transactionManager() default "txManager";
 }
