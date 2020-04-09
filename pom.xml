@@ -11,6 +11,7 @@
         <module>chapter5</module>
         <module>chapter6</module>
       <module>chapter7</module>
+      <module>chapter8</module>
     </modules>
     <packaging>pom</packaging>
     <name>think-in-spring-boot</name>
