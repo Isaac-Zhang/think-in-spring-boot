@@ -1,4 +1,4 @@
-package com.liferunner.deep.in.springboot.config;
+package com.liferunner.deep.in.springboot.config.based_annotation_impl;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

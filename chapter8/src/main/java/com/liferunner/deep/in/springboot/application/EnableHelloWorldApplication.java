@@ -1,6 +1,6 @@
 package com.liferunner.deep.in.springboot.application;
 
-import com.liferunner.deep.in.springboot.config.EnableHelloWorld;
+import com.liferunner.deep.in.springboot.config.based_annotation_impl.EnableHelloWorld;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Configuration;
 
