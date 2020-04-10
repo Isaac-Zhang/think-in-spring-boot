@@ -1,6 +1,7 @@
 package com.liferunner.deep.in.springboot.config.based_api_impl.import_selector;
 
 import com.liferunner.deep.in.springboot.config.based_api_impl.CustomServer;
+import com.liferunner.deep.in.springboot.config.based_api_impl.import_bean_definition_registrar.CustomServerImportBeanDefinitionRegistrar;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -17,7 +18,8 @@ import org.springframework.context.annotation.Import;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Import(CustomServerImportSelector.class) // 导入 CustomServerImportSelector
+//@Import(CustomServerImportSelector.class) // 导入 CustomServerImportSelector
+@Import(CustomServerImportBeanDefinitionRegistrar.class) // 替换上面一行的注册实现
 public @interface EnableCustomServer {
 
     /**

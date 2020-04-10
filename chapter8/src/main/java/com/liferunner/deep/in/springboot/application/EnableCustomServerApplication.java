@@ -2,9 +2,11 @@ package com.liferunner.deep.in.springboot.application;
 
 import com.liferunner.deep.in.springboot.config.based_api_impl.CustomServer;
 import com.liferunner.deep.in.springboot.config.based_api_impl.CustomServer.Type;
+import com.liferunner.deep.in.springboot.config.based_api_impl.import_bean_definition_registrar.CustomServerImportBeanDefinitionRegistrar;
 import com.liferunner.deep.in.springboot.config.based_api_impl.import_selector.EnableCustomServer;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 
 /**
  * EnableCustomServerApplication for TODO
@@ -13,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
  * @since 2020/4/10
  **/
 @Configuration
-@EnableCustomServer(type = Type.HTTP, status = "启动")
+@EnableCustomServer(type = Type.FTP, status = "启动")
 public class EnableCustomServerApplication {
 
     public static void main(String[] args) {
