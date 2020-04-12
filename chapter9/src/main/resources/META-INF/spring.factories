@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.AutoConfigurationImportListener=\
+  com.liferunner.deep.in.springboot.listener.CustomAutoConfigurationImportListener
