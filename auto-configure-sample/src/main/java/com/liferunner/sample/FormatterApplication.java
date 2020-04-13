@@ -3,6 +3,7 @@ package com.liferunner.sample;
 import com.liferunner.sample.autoconfigure.formatter.Formatter;
 import java.util.HashMap;
 import java.util.Map;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -13,7 +14,8 @@ import org.springframework.context.ConfigurableApplicationContext;
  * @author <a href="mailto:magicianisaac@gmail.com">Isaac.Zhang | 若初</a>
  * @since 2020/4/12
  **/
-@SpringBootApplication
+//@SpringBootApplication
+@EnableAutoConfiguration
 public class FormatterApplication {
 
     public static void main(String[] args) {
