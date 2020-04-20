@@ -26,7 +26,7 @@ public class FormatterApplication {
         Map<String, String> params = new HashMap<>();
         params.put("name", "zhangpan");
         params.put("age", "18");
-        System.out.println("格式化map结果：" + formatter.format(params));
+        System.out.println(formatter.getClass().getSimpleName() + ":格式化map结果：" + formatter.format(params));
 
         context.close();
     }
