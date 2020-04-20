@@ -16,7 +16,11 @@ public class JsonFormatter implements Formatter {
     private final ObjectMapper objectMapper;
 
     public JsonFormatter() {
-        this.objectMapper = new ObjectMapper();
+        this(new ObjectMapper());
+    }
+
+    public JsonFormatter(ObjectMapper objectMapper) {
+        this.objectMapper = objectMapper;
     }
 
     @Override

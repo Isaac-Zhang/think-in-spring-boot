@@ -3,6 +3,7 @@ package com.liferunner.sample;
 import com.liferunner.sample.autoconfigure.formatter.Formatter;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -21,13 +22,23 @@ public class FormatterApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext context = new SpringApplicationBuilder(FormatterApplication.class).run(args);
         Formatter formatter = context.getBean(Formatter.class);
-        formatter.format("isaac");
-
         Map<String, String> params = new HashMap<>();
         params.put("name", "zhangpan");
         params.put("age", "18");
-        System.out.println(formatter.getClass().getSimpleName() + ":格式化map结果：" + formatter.format(params));
+        Map<String, Formatter> beans = context.getBeansOfType(Formatter.class);
+        for (Entry<String, Formatter> stringFormatterEntry : beans.entrySet()) {
+            System.out.println(
+                "bean name:" + stringFormatterEntry.getKey() + "====" + formatter.getClass().getSimpleName() + ":格式化map"
+                    + "结果："
+                    + formatter.format(params));
+        }
 
+        beans.forEach((name, f) -> {
+            System.out.println(
+                "bean name:" + name + "====" + formatter.getClass().getSimpleName() + ":格式化map"
+                    + "结果："
+                    + formatter.format(params));
+        });
         context.close();
     }
 }

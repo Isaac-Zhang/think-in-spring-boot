@@ -27,17 +27,21 @@
       <version>1.0.0</version>
     </dependency>
     <!-- Spring Boot Starter 基础依赖 -->
+<!--    <dependency>-->
+<!--      <groupId>org.springframework.boot</groupId>-->
+<!--      <artifactId>spring-boot-starter</artifactId>-->
+<!--      <optional>true</optional>-->
+<!--    </dependency>-->
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter</artifactId>
-      <optional>true</optional>
+      <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
     <!-- Jackson 依赖 -->
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <optional>true</optional>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>com.fasterxml.jackson.core</groupId>-->
+<!--      <artifactId>jackson-databind</artifactId>-->
+<!--      <optional>true</optional>-->
+<!--    </dependency>-->
 
 
   </dependencies>
