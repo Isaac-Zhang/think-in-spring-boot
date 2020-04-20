@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingClass;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnNotWebApplication;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -15,6 +17,12 @@ import org.springframework.context.annotation.Configuration;
  * @since 2020/4/12
  **/
 @Configuration
+/**
+ * 表示 formatter.enabled = true时，才会自动装配当前FormatterAutoConfiguration
+ */
+@ConditionalOnProperty(prefix = "formatter",name = "enabled", havingValue = "true",
+matchIfMissing = true)// 设置如果配置不存在时，同样视为匹配
+@ConditionalOnNotWebApplication // 如果应用不是web应用，则自动装配
 public class FormatterAutoConfiguration {
 
     @Bean

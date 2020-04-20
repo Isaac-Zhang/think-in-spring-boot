@@ -20,7 +20,11 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class FormatterApplication {
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = new SpringApplicationBuilder(FormatterApplication.class).run(args);
+        ConfigurableApplicationContext context =
+            new SpringApplicationBuilder(FormatterApplication.class)
+                // 配置默认属性值，=号后面不能有空格，并且会被配置文件替换掉
+                .properties("formatter.enabled=true")
+                .run(args);
         Formatter formatter = context.getBean(Formatter.class);
         Map<String, String> params = new HashMap<>();
         params.put("name", "zhangpan");
