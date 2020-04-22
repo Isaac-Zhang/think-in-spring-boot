@@ -3,6 +3,7 @@ package com.liferunner.sample.autoconfigure.formatter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnNotWebApplication;
@@ -20,9 +21,10 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 表示 formatter.enabled = true时，才会自动装配当前FormatterAutoConfiguration
  */
-@ConditionalOnProperty(prefix = "formatter",name = "enabled", havingValue = "true",
-matchIfMissing = true)// 设置如果配置不存在时，同样视为匹配
+@ConditionalOnProperty(prefix = "formatter", name = "enabled", havingValue = "true",
+    matchIfMissing = true)// 设置如果配置不存在时，同样视为匹配
 @ConditionalOnNotWebApplication // 如果应用不是web应用，则自动装配
+@ConditionalOnExpression("${formatter.enabled:true}") // 更具Spring 表达式注解重构
 public class FormatterAutoConfiguration {
 
     @Bean
