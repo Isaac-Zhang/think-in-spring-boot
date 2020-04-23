@@ -4,6 +4,7 @@ import com.liferunner.sample.autoconfigure.formatter.Formatter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import org.springframework.boot.Banner.Mode;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -24,6 +25,7 @@ public class FormatterApplication {
             new SpringApplicationBuilder(FormatterApplication.class)
                 // 配置默认属性值，=号后面不能有空格，并且会被配置文件替换掉
                 .properties("formatter.enabled=true")
+                .bannerMode(Mode.OFF)
                 .run(args);
         Formatter formatter = context.getBean(Formatter.class);
         Map<String, String> params = new HashMap<>();
