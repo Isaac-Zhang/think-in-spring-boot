@@ -15,6 +15,7 @@
       <module>chapter9</module>
       <module>formatter-spring-boot-starter</module>
       <module>auto-configure-sample</module>
+      <module>chapter11</module>
     </modules>
     <packaging>pom</packaging>
     <name>think-in-spring-boot</name>
