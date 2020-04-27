@@ -25,6 +25,7 @@ public class AnnotatedEventListenerOnMultiEventsBootstrap {
         context.close();
     }
 
+    // @Async需要激活，否则无效
     @EnableAsync
     public static class MyEventListener {
 
